@@ -115,6 +115,7 @@ public class BookDao {
                     .languageId(rs.getInt(7))
                     .authorDtoList(authorDtoList)
                     .build();
+
         });
         String langSql = "select lang from languages where id = " + bookDto.getLanguageId() + ";";
         bookDto.setLanguageName(jdbcTemplate.query(langSql, rs -> {

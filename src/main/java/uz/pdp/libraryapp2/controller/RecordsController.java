@@ -22,6 +22,7 @@ public class RecordsController {
 
     @GetMapping
     public String getAllRecords(Model model) {
+        System.out.println("O'zgartirdik");
         List<Records> allRecordsFromDb = recordsDao.getALLRecordsFromDb();
         model.addAttribute("recordList",allRecordsFromDb);
         return "records/view-records-form";
